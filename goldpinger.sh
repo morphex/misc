@@ -17,7 +17,7 @@ do
   then
     :
   else
-    echo "Ping failed, regetting IP with dhclient"
+    echo `date -Iseconds` "Ping failed, regetting IP with dhclient"
     /sbin/dhclient $interface
   fi
   sleep 10s
