@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Script that will start a process, and then restart (kill and start it again)
+# after a set amount of time.  Default it 120 minutes.
+#
+# The format of the time follows the format of sleep.
+#
+# ./aviewtoakill command [time]
+
+pid=0
+command=$1
+sleep=""
+if [ -z $2 ]; then
+  sleep="120m"
+else
+  sleep=$2
+fi
+while :
+do
+  if [ $pid -ne 0 ]; then
+    echo "kill pid is " $pid
+    kill -9 $pid
+    sleep 5s
+  fi
+  $command &
+  pid=$!
+  sleep $sleep
+done
