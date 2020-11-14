@@ -14,6 +14,8 @@ cleanup() {
   result=`ps -q $pid`
   if [ "$?" -ne 0 ]; then 
     echo "No process remaining"
+  else
+    echo "Process still running: " $result
   fi
   exit
 }
