@@ -22,14 +22,14 @@ class crude_calculator:
     self.digits += str(new)
     return int(new)
 
-#enum = crude_calculator(355, 113)
-enum = crude_calculator(7, 22)
-enum = crude_calculator(1, 3)
+enum = crude_calculator(355, 113)
+#enum = crude_calculator(7, 22)
+#enum = crude_calculator(1, 3)
 
 index = 0
 
 for d in enum:
-    if index > 10:
+    if index > 1000:
         print()
         break
     print(d,end='')
