@@ -6,6 +6,16 @@ Small utility script to find the right places to put
 two poles that will support a roof, so that it is possible
 to extend it to a whole length with an extra pole.
 
+Partial:
+
+*********
+  -   -
+
+Whole:
+
+*************
+  -   -   -
+
 """
 
 # Metres
