@@ -26,7 +26,7 @@ fi
 
 
 # Getting the active interface
-interface=`route|grep default|awk '{print $8}'`
+interface=`/sbin/route|/bin/grep default|/usr/bin/awk '{print $8}'`
 while :
 do
   ping -c 3 8.8.8.8 > /dev/null 2>&1
@@ -41,8 +41,12 @@ do
         (/bin/sleep 5s && $reboot) &
         exit 1
       fi
-    echo `date -Iseconds` "Ping failed, regetting IP with dhclient"
-    /sbin/dhclient $interface
+      if [ -n "$interface" ]; then
+        echo `date -Iseconds` "Ping failed, regetting IP with dhclient"
+        /sbin/dhclient $interface
+      else
+        echo "No active interface found"
+      fi
   fi
   sleep 10s
 done
