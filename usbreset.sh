@@ -22,3 +22,5 @@ for bus in $buses
 do
   echo -n 0000:$bus > /sys/bus/pci/drivers/ehci-pci/bind
 done
+
+echo "Reset USB"
