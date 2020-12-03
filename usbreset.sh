@@ -16,6 +16,8 @@ done
 
 if [ ! -z "$1" ]; then
   /bin/sleep $1
+else
+  /bin/sleep 1s
 fi
 
 for bus in $buses
