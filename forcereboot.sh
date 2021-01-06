@@ -4,8 +4,6 @@
 # tries to synchronize the file systems, wait 5 seconds, then remount
 # all file systems read only, wait 5 seconds, then reboot.
 #
-# Should be safe to setuid root.
-#
 # ./forcereboot.sh [timeout]
 #
 # timeout follows the format of sleep
