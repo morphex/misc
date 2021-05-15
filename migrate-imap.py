@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 host_from_password))
     print('  -host2 %s -user2 %s -password2 %s \\' % (hostname_to,
                 host_to_username, host_to_password))
-    print('  -ssl1 -ssl2 \\', end='')
+    print('  -ssl1 -ssl2 --addheader \\', end='')
     for folder in all_folders:
         print('\n  -folder "%s" \\' % folder, end='')
     print()
