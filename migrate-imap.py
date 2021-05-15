@@ -42,11 +42,11 @@ if __name__ == '__main__':
     excluded_folders = []
     options, arguments = getopt.getopt(arguments, "", ["listfolders",
 	"hostnameto=", "usernameto=", "passwordto=", "excludefolder=",
-        "excludedfoldersisrecursive"])
+        "excludefoldersisrecursive"])
     for options_, arguments in options:
         if options_ == '--listfolders':
             list_folders = True
-        if options_ == '--excludedfoldersisrecursive':
+        if options_ == '--excludefoldersisrecursive':
             excluded_folders_is_recursive = True
         if options_ == '--excludefolder':
             excluded_folders.append(arguments)
@@ -85,7 +85,6 @@ if __name__ == '__main__':
     print()
     print('# Excluded folders')
     print('# ', end='')
-    print()
     print(exclude)
     print('# Excluded folders and matching folders: %i %i' % (
             len(excluded_folders), len(exclude)))
@@ -95,8 +94,9 @@ if __name__ == '__main__':
     print('  -user1 %s -password1 %s \\' % (host_from_username,
                 host_from_password))
     print('  -host2 %s -user2 %s -password2 %s \\' % (hostname_to,
-                host_to_username, host_to_password), end='')
+                host_to_username, host_to_password))
+    print('  -ssl1 -ssl2 \\', end='')
     for folder in all_folders:
-        print('\n  -folder %s \\' % folder, end='')
+        print('\n  -folder "%s" \\' % folder, end='')
     print()
     print()
