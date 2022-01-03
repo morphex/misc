@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 # Small script that will run command N number of times,
-# sleeping seconds between each run.
+# sleeping seconds between each run.  N can be a float,
+# for example 0.1 (1 10th of a second).
 
 import sys, os, time
 
@@ -14,4 +15,3 @@ command = ' '.join(sys.argv[3:])
 for x in range(0, times):
     os.system(command)
     time.sleep(sleep)
-
