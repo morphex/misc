@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 
 # Small script that will run command N number of times,
-# sleeping seconds between each run.  N can be a float,
+# sleeping seconds between each run.  S can be a float,
 # for example 0.1 (1 10th of a second).
+#
+# For example:
+#
+# ./command_runner.py 10 2 ls
 
 import sys, os, time
 
 if len(sys.argv) < 4:
-    print("command_runner <N times> <sleep> <command> [command argument 1, 2, ...]")
+    print("command_runner <N times> <S sleep> <command> [command argument 1, 2, ...]")
     sys.exit(1)
 times = int(sys.argv[1])
 sleep = float(sys.argv[2])
