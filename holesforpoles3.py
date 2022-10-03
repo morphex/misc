@@ -40,7 +40,8 @@ best_match = min(numbers, key=lambda x: abs(x[0]))
 print("Best match, margin of error: %f" % best_match[0])
 print("Space between poles for whole: %f" % best_match[1])
 print("Space between poles for partial: %f" % best_match[2])
-print("Outer margin: %f" % best_match[3])
+outer_margin = best_match[3]
+print("Outer margin: %f, %f" % (outer_margin, outer_margin/2))
 print("Specified length for partial: %f" % partial)
 print("Partial: Margin + space between poles: %f" %
         (best_match[2] + best_match[3]))
